@@ -1,0 +1,16 @@
+{
+  "name": "highest-visitors-website",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Abraham Mondo",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.11",
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "dev": "nodemon app.js"
+  }
+}
