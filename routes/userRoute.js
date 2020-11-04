@@ -1,12 +1,14 @@
 const express = require('express')
+const app = express()
 const router = express.Router()
 const User = require('../models/user')
-
+const path = require('path')
+app.use('/views', express.static(path.join(__dirname, 'public')))
 
 router.get('/', async(req,res) => {
     try{
            const users = await User.find()
-           res.json(users)
+           res.render('index')
     }catch(err){
         res.send('Error ' + err)
     }
@@ -25,7 +27,7 @@ router.get('/:id', async(req,res) => {
 router.post('/register', async(req,res) => {
     const user = new User({
         username: req.body.username,
-        email: req.body.eamil,
+        email: req.body.email,
         password: req.body.password
     })
 
